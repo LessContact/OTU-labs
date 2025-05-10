@@ -48,7 +48,6 @@ for k = 1:num_simulations
     num_points_for_err = length(output);
     for l = 1:num_points_for_err
         idx = round(timePoints(l) / (stepRef + %eps)) + 1;
-
         idx = min(max(idx, 1), length(y_ref));
 
         err_sum_sq = err_sum_sq + (y_ref(idx) - output(l))^2;
